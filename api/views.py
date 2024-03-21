@@ -14,7 +14,7 @@ def contact_form(request):
         print(data)
 
         # Assuming you have set up email settings in your Django settings.py
-        to_email = ['markdavelorejo@gmail.com']
+        to_email = settings.EMAIL_HOST_USER
         from_email = email
         messages =f'Name: {fullname}\nEmail: {email}\nMessage: {message}'
         send_mail(subject, messages, from_email, [to_email])
